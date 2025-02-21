@@ -1,0 +1,32 @@
+{
+    "name":"Capstone Dev Container",
+    "build": {
+        // Default repository devcontainer setup.
+        "dockerfile": "../devops/devcontainer_base.dockerfile"
+        // If you want local custom docker settings (such as a --mount location),
+        // the create your own local docker file starting with `FROM capstone:<version>`.
+        //"dockerfile": "my_local_additions.dockerfile"
+    },
+    "runArgs": [
+        // Start the container in an interactive shell.
+        "-it",
+        "--rm", // Delete the container upon exit to prevent piling up throw away instances on your harddrive.
+        // Necessary to access host.docker.internal when using Docker-for-Linux
+        "--add-host",
+        "host.docker.internal:host-gateway"
+    ],
+    // For web based applications, forward whatever port you use in the container back to your host machine.
+    "forwardPorts": [
+        4242
+    ],
+    // These are VSCode plugins that will always be avialable in the devcontainer
+    // environment for all team members.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}

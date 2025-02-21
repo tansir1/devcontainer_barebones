@@ -1,0 +1,10 @@
+
+# This file is ignored so that developers can have local customizations.
+# The .devcontainer/devcontainer.json.template version controls all
+# project wide settings. Developers must manually copy/paste between
+# these files to keep them synchronized.
+.devcontainer/devcontainer.json
+
+# The name of the compiled my_cpp_proj project. This binary file
+# should not be version controlled.
+my_cpp_app
